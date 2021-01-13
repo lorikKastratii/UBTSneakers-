@@ -1,0 +1,166 @@
+
+
+
+
+.main {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    min-height: 700px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+#memberSlogan{
+    display: flex;
+    width: 600px;
+    height: 60px;
+    color: black;
+    font-size: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    min-height: 450px;
+    background: none;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    background-color: #555555;
+}
+
+#registerForm{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    min-height: 450px;
+    border-radius: 15px;
+    display: none;
+    background-color: #555555;
+}
+
+
+#buttonsBox{
+    display: flex;
+    min-height: 50px;
+    width: 580px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+   
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    min-height: 350px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+#form2{
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    min-height: 350px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.buttons{
+    width: 50%;
+    min-height: 100%;
+    margin: 0;
+    background: none;
+    box-shadow: 1px ;
+    border: none;
+    border-bottom: 1px solid #698288; 
+    color: white;
+    font-size: 20px;
+    
+}
+
+.buttons:hover{
+    /* background-color: #24D3AC; */
+    background-color: white;
+    color: black;
+}
+
+#loginButtonLogin , #registerButtonLogin{
+    border-right: 1px solid #698288; 
+    cursor: pointer;
+    
+}
+
+#loginButtonRegister , #registerButtonRegister{
+    border-left: 1px solid #698288;
+    cursor: pointer;
+}
+
+
+.txtField{
+    width: 400px;
+    height: 35px;
+    border: thin;
+    border-radius: 10px;
+    padding: 5px;
+    color: #7A8584;
+    margin: 10px auto;
+    outline: none;
+}
+
+.submitButton {
+    color: black;
+    font-size: 20px;
+    height: 35px;
+    width: 130px;
+    border:thin;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#error,#errorRegister {
+    margin-top: 20px;
+    display: flex;
+    width: 350px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+@media only screen and (max-width:650px){
+    
+    #memberSlogan {
+        max-width: 350px;
+        
+    }
+   .main,#loginForm,#registerForm,#buttonsBox,#form,#form2{
+       max-width: 350px;
+   }
+
+   .buttons{
+       width: 50%;
+   }
+
+   .txtField{
+       max-width: 300px;
+   }
+}
+
