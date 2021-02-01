@@ -19,6 +19,11 @@
  
 }
 
+#headerImage{
+    width: 100%;
+    height: 500px;
+}
+
 
 
 #content{
@@ -82,6 +87,8 @@
     display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #slider img {
@@ -109,3 +116,17 @@
     border-radius: 0px 10px 10px 0px;
 }
 
+@media only screen and (max-width:500px){
+
+    #headerImage{
+        height: 250px;
+    }
+
+    #slider{
+        height: 150px;
+    }
+
+    #slider img {
+        height: 140px;
+    }
+}    

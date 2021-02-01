@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+    Use admin\models\User;
+    include_once "inc/header.php";
+    include_once "admin/models/User.php";
 
-    <!-- lidhja me headercss -->
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-
-    <!-- lidhja me footercss -->
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-
-    <!-- lidhja me css -->
-    <link rel="stylesheet" href="css/login.css" type="text/css">
-
-    <!-- lidhja me validimin e formes -->
-    <script src="javascript/myJs.js"></script>
-
-    
-     
-
-
-   
-
-    <title>UBT Sneakers | Be a Member</title>
-
-</head>
-<body>
-
-    
-
-    <header class="header">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sneakers.html">Sneakers</a></li>
-            <li><a href="soccer.html">Soccer</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="login.html">BECOME A MEMBER</a></li>
-
-        </ul>
-    </header>
-
-
+?>
+<style>
+    <?php include_once "css/login.css" ?>
+</style>
     <div class="main">
           
 
@@ -48,6 +14,14 @@
             <h1>Member Login</h1>
 
         </div>
+
+        <?php
+            if(isset($_POST["login"])){
+                $user = new User();
+                $user->login($_POST['email'],$_POST['password']);
+
+            }
+        ?>
         <div id="loginForm">               
                 <div id="buttonsBox">
                     <button class="buttons"id="loginButtonLogin">Login</button>
@@ -55,14 +29,14 @@
 
                 </div>
                 
-                <form id="form">
-                    <label>Username:</label>
-                    <input type="text" name="username" id="username"  class="txtField" placeholder="username">
+                <form id="form" method="post">
+                    <label>Email:</label>
+                    <input type="email" name="email" id="email"  class="txtField" placeholder="email">
                    
                     <label>Password:</label>
                     <input type="password" name="password" id="password"  class="txtField" placeholder="password">
                    
-                    <input type="button" name="login" class="submitButton" value="Login" onclick="validateLogin()">
+                    <input type="submit" name="login" class="submitButton" value="Login" onclick="validateLogin()">
                     <div id="error">
                         
                     </div>
@@ -96,28 +70,7 @@
 
     </div>
 
-    <hr>
-    <footer class="footer">
-        <img src="images/logo.png" width="155px" height="90px" alt="logo">
-        <div class="footer-menu">
-            <a href="home.html">About</a>
-            <a href="home.html">FAQ</a>
-            <a href="home.html">Size Guide</a>
-            <a href="home.html">Shipping</a>
-            <a href="home.html">Payment</a>
-        </div>
-
-        <div class="socialNetworks">
-            <img src="images/twitter.png" alt="">
-            <img src="images/facebook.png" alt="">
-            <img src="images/instagram.png" alt="">
-            <img src="images/linkedin.png" alt="">
-        </div>
-        <div class="references">
-            <a href="home.html">@UBTSneakers. All rights reserved</a>
-            <a href="home.html">LK | EM | Privacy Policy</a>
-        </div>
-    </footer>
+    <?php include "inc/footer.php" ?>
     
     
     

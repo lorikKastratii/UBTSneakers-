@@ -1,29 +1,8 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UBT Sneakers | Sneakers</title>
-    <link rel="stylesheet" href="css/sneakers.css">
+<?php include "inc/header.php";?>
 
-    <!-- header css -->
-    <link rel="stylesheet" href="css/header.css">
-    
-    <!-- footer css -->
-    <link rel="stylesheet" href="css/footer.css">
-    
-    <script src="javascript/myJs.js"></script>
-</head>
-<body>
-    
-    <header class="header">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sneakers.html">Sneakers</a></li>
-            <li><a href="soccer.html">Soccer</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="login.html">BECOME A MEMBER</a></li>
-        </ul>
-    </header>
+<style>
+    <?php include "css/sneakers.css" ?>
+</style>
 
     <div id="newRelease">
         <div id="newReleaseItem1">
@@ -39,10 +18,10 @@
         <div id="trending">
             <h3 style="font-size: 30px;">TRENDING ITEMS</h3>
             <ul>
-                <li><a href="sneakers.html">FEATURED | </a></li>
-                <li><a href="sneakers.html">NEW | </a></li>
-                <li><a href="sneakers.html">BEST | </a></li>
-                <li><a href="sneakers.html">SPECIAL</a></li>
+                <li><a href="sneakers.php">FEATURED | </a></li>
+                <li><a href="sneakers.php">NEW | </a></li>
+                <li><a href="sneakers.php">BEST | </a></li>
+                <li><a href="sneakers.php">SPECIAL</a></li>
             </ul>
         </div>
 
@@ -168,29 +147,7 @@
         </div>
     </div>
 
-    <hr>
-
-    <footer class="footer">
-        <img src="images/logo.png" width="155px" height="90px" alt="logo">
-        <div class="footer-menu">
-            <a href="index.html">About</a>
-            <a href="index.html">FAQ</a>
-            <a href="index.html">Size Guide</a>
-            <a href="index.html">Shipping</a>
-            <a href="index.html">Payment</a>
-        </div>
-
-        <div class="socialNetworks">
-            <img src="images/twitter.png" alt="">
-            <img src="images/facebook.png" alt="">
-            <img src="images/instagram.png" alt="">
-            <img src="images/linkedin.png" alt="">
-        </div>
-        <div class="references">
-            <a href="index.html">@UBTSneakers. All rights reserved</a>
-            <a href="index.html">LK | EM | Privacy Policy</a>
-        </div>
-    </footer>
+    <?php include "inc/footer.php" ?>
 
     
    

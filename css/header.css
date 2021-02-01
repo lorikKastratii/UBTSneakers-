@@ -4,6 +4,15 @@
 
 }
 
+.loggedIn{
+    display: flex;
+    width: 95%;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
 .header{
     display: flex;    
     width: 95%;
@@ -12,6 +21,7 @@
     /* background-color: rgb(229, 247, 247); */
     position: sticky;
     top: 0;
+    flex-direction: column;
 }
 
 .header ul {
@@ -58,7 +68,7 @@
     
 }
 
-@media only screen and (max-width:375px){
+@media only screen and (max-width:500px){
     
     /* .header{
         flex-direction: column;
@@ -66,5 +76,7 @@
     .header ul {
         flex-direction: column;
     } 
+
+    
   
 }
