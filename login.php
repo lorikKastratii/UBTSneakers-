@@ -21,6 +21,10 @@
                 $user->login($_POST['email'],$_POST['password']);
 
             }
+
+            if(isset($_POST[''])){
+                
+            }
         ?>
         <div id="loginForm">               
                 <div id="buttonsBox">
