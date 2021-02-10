@@ -1,8 +1,5 @@
-<?php
-  ob_start();
-  session_start();
-?>
-
+<?php  ob_start();
+  session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -59,6 +56,7 @@
       <a href="add_users.php"><span>Add Users</span></a>
       <a href="products.php"><span>Products</span></a>
       <a href="add_products.php"><span>Add Products</span></a>
+      <a href="../index.php"><span>Page</span></a>
 
     </div>
     <!--sidebar end-->

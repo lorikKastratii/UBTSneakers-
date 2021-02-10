@@ -78,6 +78,19 @@
                 echo "Error ne SQL SYNTAX: " . $e->getMessage();
             }
         }
+        
+        public function find_product_categories($id){
+            try {
+                $sql = "SELECT Id,Name,Description,Price,Image,Category,InsertBy from Products WHERE Category=:id";
+                $stmt = $this->prepare($sql);
+                $stmt->bindParam(":id",$id);
+                $stmt->execute();
+                // $stmt->setFetchMode(PDO::FETCH_CLASS,__NAMESPACE__. "\\Product");
+                return $stmt->fetchAll();
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+            }
+        }
 
         public function find_id($id){
             $sql = "SELECT " . implode(",",static::$db_tables_fields) . " FROM ". static::$db_table . " WHERE id=$id";

@@ -14,28 +14,31 @@ session_start();
 
 </head>
 <body>
-    <?php
-        if(isset($_SESSION['user'])){
-            echo "<div>
-                <form method='post'>
-                    <input type = 'submit' name='logout' value='Logout'>
-                </form>
-            </div>";
-        }
 
-        if(isset($_POST['logout'])){
-            session_unset();
-            header("location:index.php");
-        }
+        <?php
+            if(isset($_SESSION['user'])){
+                echo "<div class='loggedIn'>
+                    <form method='post' class='loggedIn'>
+                        <input type='submit' name='logout' value='Logout'>
+                    </form>
+                </div>";
+            }
+
+            if(isset($_POST['logout'])){
+                session_unset();
+                header("location:index.php");
+            }
+        
+        ?>
     
-    ?>
     <header class="header">
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="sneakers.php">Sneakers</a></li>
             <li><a href="soccer.php">Soccer</a></li>
             <li><a href="about.php">About Us</a></li>
-            <?php if(isset($_SESSION['user'])){
+            <?php 
+            if(isset($_SESSION['user'])){
                 if($_SESSION['user']['role'] == 2){
                     echo "<li style='color:white;'>LoggedIn as " . $_SESSION["user"]["firstname"]."</li>";
                 }else {
@@ -48,3 +51,5 @@ session_start();
             
         </ul>
     </header>
+
+   

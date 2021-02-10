@@ -26,7 +26,7 @@
             $product->setPrice($_POST['price']);
             $product->setImage($fileName);
             $product->setCategory(1);
-            $product->setInsertBy(1);
+            $product->setInsertBy($_SESSION['user']['id']);
             $product->create();
         }
     
