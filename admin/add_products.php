@@ -25,7 +25,7 @@
             $product->setDescription($_POST['description']);
             $product->setPrice($_POST['price']);
             $product->setImage($fileName);
-            $product->setCategory(1);
+            $product->setCategory($_POST['category']);
             $product->setInsertBy($_SESSION['user']['id']);
             $product->create();
         }
@@ -44,6 +44,13 @@
 
             <label for="Price">Price</label>
             <input type="text" name="price" id="inputField">
+
+            <label for="Category">Category</label>
+            <select name="category">
+                <option value="0" hidden>Select category</option>
+                <option value="1">Sneakers </option>
+                <option value="2">Sport</option>
+            </select>
 
             <label for="Image">Image</label>
             <input type="file" name="file" id="">          

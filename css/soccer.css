@@ -65,12 +65,12 @@
 
 .main {
     display: flex;
-    border: 1px solid red;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     /* padding: 5px; */
     flex-wrap: wrap;
     margin-top: 15px;
+    width: 90vw;
 }
 
 
@@ -98,6 +98,6 @@
 }
 
 .item img {
-    height: 200px;
-    width: 180px;
+    height: 100px;
+    width: 160px;
 }

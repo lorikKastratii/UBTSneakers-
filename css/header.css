@@ -4,14 +4,12 @@
 
 }
 
-.loggedIn{
+.logged{
     display: flex;
-    width: 95%;
-    background-color: red;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
     margin: 0 auto;
+    border: 1px solid red;
+    width: 90%;
+    width: 100px;
 }
 
 .header{
@@ -67,6 +65,10 @@
 .header ul li a:hover{
     text-decoration: underline;
     
+}
+
+#logout{
+    background-color: blue;
 }
 
 @media only screen and (max-width:500px){

@@ -37,15 +37,19 @@
         <?php
             $product = new Product();
             foreach ($product->find_all() as $p){
-                $user = new User();
-                $user = $user->find_id($p->getInsertedBy());
-                echo "<div class='item'>";
-                    
-                    echo "<img src='images/" . $p->getImage() . "'>";
-                    echo "<h1>" . $p->getName() . "</h1>";
-                    echo "<p>" . $p->getPrice() . "$</p>";
-                    echo "<p style='font-size:12px;'>Posted by:" . $user->getFirstname() . "</p>";
-                echo "</div>";  
+                if($p->getCategory() == 1){
+                    $user = new User();
+                        $user = $user->find_id($p->getInsertedBy());
+                    echo "<div class='item'>";
+                        
+                        echo "<img src='images/" . $p->getImage() . "'>";
+                        echo "<h1>" . $p->getName() . "</h1>";
+                        echo "<p>" . $p->getPrice() . "$</p>";
+                        if(isset($_SESSION['user'])){
+                            echo "<p style='font-size:12px;'>Posted by:" . $user->getFirstname() . "</p>";
+                        }
+                    echo "</div>";  
+                }
             }
         ?>
 

@@ -10,18 +10,50 @@ session_start();
     <!-- header css -->
     <link rel="stylesheet" href="css/header.css">
     <script src="javascript/myJs.js"></script>
+    <style>
+        .logged {
+            display:flex;
+            width:90vw;
+            margin:0 auto;
+            height:50px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .logoutForm{
+            display:flex;
+            width:50vw;
+            align-items:center;
+        }
+        #logout{
+            padding:5px 10px;
+            background-color: rgb(85, 85, 85);
+            border-radius:5px;
+            color:white;
+        }
+    </style>
 
 
 </head>
 <body>
 
         <?php
+            // if(isset($_SESSION['user'])){
+            //     echo "<div class='loggedIn'>
+            //         <form method='post'>
+            //             <input type='submit' name='logout' value='Logout' id='logout'>
+            //         </form>
+            //     </div>";
+            // }
+
             if(isset($_SESSION['user'])){
-                echo "<div class='loggedIn'>
-                    <form method='post' class='loggedIn'>
-                        <input type='submit' name='logout' value='Logout'>
+                echo "
+                <div class='logged'>
+                    <form method='post' class='logoutForm'>
+                        <label>Logged in as: <b>" . $_SESSION["user"]["email"] ."</b></label>
+                        <input type='submit' value='Logout' name='logout' id='logout'>
                     </form>
-                </div>";
+                </div>
+                
+                ";
             }
 
             if(isset($_POST['logout'])){
@@ -39,10 +71,10 @@ session_start();
             <li><a href="about.php">About Us</a></li>
             <?php 
             if(isset($_SESSION['user'])){
-                if($_SESSION['user']['role'] == 2){
-                    echo "<li style='color:white;'>LoggedIn as " . $_SESSION["user"]["firstname"]."</li>";
-                }else {
+                if($_SESSION['user']['role'] == 1){
                     echo "<li><a href='admin/index.php'>Admin Dashboard</a></li>";
+                }else {
+                    echo "<li><a href='index.php'>Not Available</a></li>";
                 }
             } else {
                 echo "<li><a href='login.php'>BECOME A MEMBER</a></li>";

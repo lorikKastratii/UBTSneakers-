@@ -94,7 +94,15 @@
 
         public function register(){
             try {
-                
+                $sql = "INSERT INTO Users  (firstname,lastname,email,password,role) values (:firstname,:lastname,:email,:password,:role)";
+                $stmt=$this->prepare($sql);
+                $stmt->bindParam(":firstname",$this->firstname);
+                $stmt->bindParam(":lastname",$this->lastname);
+                $stmt->bindParam(":email",$this->email);
+                $stmt->bindParam(":password",$this->password);
+                $stmt->bindParam(":role",$this->role);
+                $stmt->execute();
+                header("Location:login.php");
             }catch (PDOException $e){
                 echo "Error: " . $e->getMessage();
             }

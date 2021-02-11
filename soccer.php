@@ -13,9 +13,9 @@
         <img src="images/football.jpg" alt="">
     </div>
 
-    <div class="container" style="border:1px solid red;">
+    <div class="container">
 
-        <div class="menuButtons"  style="border:2px solid blue;">
+        <div class="menuButtons">
             <button class="buttons" onclick="artificialGrassDiv()">Artificial Grass</button>
             <button class="buttons" onclick="indoorDiv()">Indoor</button>
             <button class="buttons" onclick="softGroundDiv()">Soft Ground</button>
@@ -25,16 +25,18 @@
         <div class="main">
             <?php
                 $product = new Product();
-                foreach ($product->find_product_categories(2) as $p){
-                    // $user = new User();
-                    // $user = $user->find_id($p->getInsertedBy());
-                    echo "<div class='item' style='border:1px solid green;'>";
-                        
-                        echo "<img src='images/" . $p->getImage() . "'>";
-                        echo "<h1>" . $p->getName() . "</h1>";
-                        echo "<p>" . $p->getPrice() . "$</p>";
-                        echo "<p style='font-size:12px;'>Posted by:" . $user->getFirstname() . "</p>";
-                    echo "</div>";  
+                foreach ($product->find_all() as $p){
+                    if($p->getCategory() == 2){
+                        $user = new User();
+                        $user = $user->find_id($p->getInsertedBy());
+                        echo "<div class='item'>";
+                            
+                            echo "<img src='images/" . $p->getImage() . "'>";
+                            echo "<h1>" . $p->getName() . "</h1>";
+                            echo "<p>" . $p->getPrice() . "$</p>";
+                            echo "<p style='font-size:12px;'>Posted by:" . $user->getFirstname() . "</p>";
+                        echo "</div>";  
+                    }
                 }
             ?>
 

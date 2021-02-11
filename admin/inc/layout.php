@@ -62,6 +62,6 @@
     <!--sidebar end-->
 
     <div class="content">
-      <div class="card">
+
 
       

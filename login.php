@@ -22,8 +22,25 @@
 
             }
 
-            if(isset($_POST[''])){
-                
+            if(isset($_POST['register'])){
+                $user = new User();
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
+                $email = $_POST['emailRegister'];
+                $password = $_POST['passwordRegister'];
+                if(strlen($firstname) < 0 
+                || strlen($lastname) < 0 
+                || strlen($email) < 0 
+                || strlen($password) < 0){
+                    echo "You must fill every field !";
+                }else {
+                    $user->setFirstname($firstname);
+                    $user->setLastname($lastname);
+                    $user->setEmail($email);
+                    $user->setPassword($password);
+                    $user->setRole(2);
+                    $user->register();
+                }
             }
         ?>
         <div id="loginForm">               
@@ -54,9 +71,12 @@
                 <button class="buttons" id="registerButtonRegister">Register</button>
             </div>
             
-            <form id="form2">
-                <label style="margin-top: 10px;">Username:</label>
-                <input type="text" name="usernameRegister" id="usernameRegister"class="txtField" placeholder="username">
+            <form id="form2" method="post">
+                <label >Firstname:</label>
+                <input type="text" name="firstname" id="firstname" class="txtField" placeholder="firstname">
+
+                <label style="margin-top: 10px;">Lastname:</label>
+                <input type="text" name="lastname" id="lastname" class="txtField" placeholder="lastname">
                 
                 <label>Email:</label>
                 <input type="email" name="emailRegister" id="emailRegister"  class="txtField" placeholder="email">
@@ -64,7 +84,7 @@
                 <label>Password:</label>
                 <input type="password" name="passwordRegister" id="passwordRegister"class="txtField" placeholder="password">
 
-                <input type="button" name="register" class="submitButton" value="Register" id="registerButton" onclick="validateRegister()">
+                <input type="submit" name="register" class="submitButton" value="Register" id="registerButton" onclick="validateRegister()">
                 
                 <div id="errorRegister">
                     
