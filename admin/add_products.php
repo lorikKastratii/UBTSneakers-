@@ -1,8 +1,16 @@
-<?php include "inc/layout.php";include "Models/Product.php"; 
-    use Admin\Models\Product;
+<?php 
+      use Admin\Models\Product;
+      use Admin\Models\Category;
+    include_once "inc/layout.php";
+    // require_once "inc/classes.php";
+    include_once "models/category.php";
+    include_once "models/product.php";
 ?>
+
+
+
 <style>
-    <?php include "css/add_form.css" ?>
+    <?php include_once "css/add_form.css" ?>
 </style>
     <?php 
         if(isset($_POST["add_product"])){
@@ -35,21 +43,28 @@
 
     <div class="mainContent">
         <h1>Create Product</h1>
+        <?php 
+            // $c = new Category();
+        ?>
         <form action="" method="post" id="add_form" enctype="multipart/form-data">
             <label for="Name">Name</label>
-            <input type="text" name="name" id="inputField">
+            <input type="text" name="name" class="inputField">
         
             <label for="Description">Description</label>
-            <input type="text" name="description" id="inputField">
+            <input type="text" name="description" class="inputField">
 
             <label for="Price">Price</label>
-            <input type="text" name="price" id="inputField">
+            <input type="text" name="price" class="inputField">
 
             <label for="Category">Category</label>
-            <select name="category">
+            <select name="category" class="inputField">
                 <option value="0" hidden>Select category</option>
-                <option value="1">Sneakers </option>
-                <option value="2">Sport</option>
+            <?php 
+                $category = new Category();
+                foreach ($category->find_all() as $c){
+                    echo "<option value='".$c->getId()."'> " . $c->getName(). " </option>";
+                }
+            ?>
             </select>
 
             <label for="Image">Image</label>

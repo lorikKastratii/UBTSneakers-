@@ -23,7 +23,7 @@
             6px 8px 15px rgba(0,0,0,0.3);
 }
 
-#inputField{
+.inputField{
     height: 40px;
     /* border: 1px thin #2F323A; */
     border:none;
@@ -31,7 +31,7 @@
     border-radius: 5px;
 }
 
-#inputField:active{
+.inputField:active{
     border:none;
     outline: none;
 }
