@@ -148,8 +148,10 @@ function validateLogin(){
 
 
         if (username.value.trim() === '' || username.value == null){
+            event.preventDefault();
             errorElement.style.color = "red";
             messages = ("Username is required");
+
         }
 
         else if (password.value.trim() === '' || password.value == null){

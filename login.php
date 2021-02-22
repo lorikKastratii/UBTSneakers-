@@ -51,16 +51,15 @@
                 </div>
                 
                 <form id="form" method="post">
+                    <label id="loginError"></label>
                     <label>Email:</label>
                     <input type="email" name="email" id="email"  class="txtField" placeholder="email">
                    
                     <label>Password:</label>
                     <input type="password" name="password" id="password"  class="txtField" placeholder="password">
                    
-                    <input type="submit" name="login" class="submitButton" value="Login" onclick="validateLogin()">
-                    <div id="error">
-                        
-                    </div>
+                    <input type="submit" name="login" class="login submitButton" value="Login" onclick="validateLogin()">
+                    
                 </form>
         </div>
 
@@ -72,11 +71,12 @@
             </div>
             
             <form id="form2" method="post">
+                
                 <label >Firstname:</label>
-                <input type="text" name="firstname" id="firstname" class="txtField" placeholder="firstname">
+                <input type="text" name="firstname" id="firstnameRegister" class="txtField" placeholder="firstname">
 
                 <label style="margin-top: 10px;">Lastname:</label>
-                <input type="text" name="lastname" id="lastname" class="txtField" placeholder="lastname">
+                <input type="text" name="lastname" id="lastnameRegister" class="txtField" placeholder="lastname">
                 
                 <label>Email:</label>
                 <input type="email" name="emailRegister" id="emailRegister"  class="txtField" placeholder="email">
@@ -84,18 +84,20 @@
                 <label>Password:</label>
                 <input type="password" name="passwordRegister" id="passwordRegister"class="txtField" placeholder="password">
 
-                <input type="submit" name="register" class="submitButton" value="Register" id="registerButton" onclick="validateRegister()">
-                
-                <div id="errorRegister">
-                    
-                </div>
+                <input type="submit" name="register" class="register submitButton" value="Register" id="registerButton" onclick="validateRegister()">
+                <label id="errorRegister" style="height:30px;"></label>
+               
             </form>
         </div>
 
     </div>
 
+
+
+    <!-- <scrip src="javascript/validate.js"></scrip> -->
+
     <?php include "inc/footer.php" ?>
-    
+    <script src="javascript/validate.js"></script>
     
     
 
