@@ -7,7 +7,6 @@
 .logged{
     display: flex;
     margin: 0 auto;
-    border: 1px solid red;
     width: 90%;
     width: 100px;
 }
@@ -73,11 +72,9 @@
 
 @media only screen and (max-width:500px){
     
-    /* .header{
-        flex-direction: column;
-    } */
+    
     .header ul {
-        flex-direction: column;
+        flex-direction: column;       
     } 
 
     

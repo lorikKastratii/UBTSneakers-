@@ -68,8 +68,8 @@
     text-decoration: underline;
 }
 
-@media only screen and (max-width:375px){
-    .footer-menu{
+@media only screen and (max-width:600px){
+    .footer-menu , .socialNetworks{
         display: flex;
         flex-direction: column;
     }

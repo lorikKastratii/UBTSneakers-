@@ -15,12 +15,7 @@
 
     <div class="container">
 
-        <div class="menuButtons">
-            <button class="buttons" onclick="artificialGrassDiv()">Artificial Grass</button>
-            <button class="buttons" onclick="indoorDiv()">Indoor</button>
-            <button class="buttons" onclick="softGroundDiv()">Soft Ground</button>
-            <button class="buttons" onclick="mainMenuDiv()">Multi-Ground</button>
-        </div>
+
 
         <div class="main">
             <?php

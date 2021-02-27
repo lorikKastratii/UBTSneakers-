@@ -71,11 +71,8 @@ session_start();
             <li><a href="about.php">About Us</a></li>
             <?php 
             if(isset($_SESSION['user'])){
-                if($_SESSION['user']['role'] == 1){
-                    echo "<li><a href='admin/index.php'>Admin Dashboard</a></li>";
-                }else {
-                    echo "<li><a href='index.php'>Not Available</a></li>";
-                }
+                echo "<li><a href='admin/index.php'>Admin Dashboard</a></li>";
+                
             } else {
                 echo "<li><a href='login.php'>BECOME A MEMBER</a></li>";
             }

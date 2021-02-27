@@ -11,7 +11,7 @@
         <div id="slogan">
             <h2 style="margin-top: 20px;">BUY NOW OR CRY LATER</h2>
             <h5 style="font-size: 26px;">Shoes Speak Louder Than Words</h5>
-            <button id="buyNowButton"><a href="sneakers.html">BUY NOW</a></button>
+            <button id="buyNowButton"><a href="sneakers.php">BUY NOW</a></button>
 
 
         </div>
